@@ -25,7 +25,7 @@ const CheckOut = () => {
         }
 
         // if(phone.length > 10){
-        //     alert('Phone number should be 10 characters or longer')
+        //     alert('Phone number should be 11 characters or longer')
         // }
         // else{
 

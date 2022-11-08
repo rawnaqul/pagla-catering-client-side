@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: async () => {
-                    return fetch('https://assign-11-server.vercel.app/servicess')
+                    return fetch('https://assign-11-server.vercel.app/serviceshome')
                 }
             },
             {

@@ -41,6 +41,7 @@ const Signup = () => {
                         <div className="card-body">
                             <form onSubmit={handleSignUp}>
                                 <h1 className="text-5xl font-bold">Sign up now!</h1>
+                                <br />
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Full Name</span>
@@ -61,6 +62,7 @@ const Signup = () => {
                                     </label>
                                     <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                                 </div>
+                                <br />
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Sign Up</button>
                                 </div>
