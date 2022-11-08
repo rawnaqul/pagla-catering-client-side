@@ -31,7 +31,7 @@ const CheckOut = () => {
 
         // }
 
-        fetch('http://localhost:5000/purchase', {
+        fetch('https://assign-11-server.vercel.app/purchase', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,14 +47,14 @@ const CheckOut = () => {
 
                 }
             })
-            .catch(er => console.error(er));
+            .catch(error => console.error(error));
 
 
     }
 
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto bg-lime-100 bg-opacity-40 p-5 rounded'>
             <form onSubmit={handlePlacePurchase}>
                 <h2 className="text-4xl">You are about to purchase: {name}</h2>
                 <br />
