@@ -8,7 +8,7 @@ const AllServices = () => {
 
     const services = useLoaderData();
     return (
-        <div className='grid lg:grid-cols-2 rounded-md'>
+        <div className='grid lg:grid-cols-2 rounded-md container mx-auto'>
             {
                 services.map(service => <ServiceCard
                     key={service._id}
