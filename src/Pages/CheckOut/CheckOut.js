@@ -56,9 +56,9 @@ const CheckOut = () => {
     return (
         <div className='container mx-auto bg-lime-100 bg-opacity-40 p-5 rounded'>
             <form onSubmit={handlePlacePurchase}>
-                <h2 className="text-4xl">You are about to purchase: {name}</h2>
+                <h2 className="text-4xl">You are about to purchase: <span className='font-extrabold'>{name}</span></h2>
                 <br />
-                <h4 className="text-3xl">Price: {price}</h4>
+                <h4 className="text-xl">Price: <span className='text-orange-500 text-2xl'>${price}</span></h4>
                 <br />
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                     <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />

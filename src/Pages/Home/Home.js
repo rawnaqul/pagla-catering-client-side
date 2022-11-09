@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Services from '../Services/Services';
 
 const Home = () => {
@@ -26,7 +26,12 @@ const Home = () => {
                         service={service}
                     ></Services>)
                 }
+                <br />
+                <div className='text-xl text-orange-600'>
+                    <Link to={'/allservices'}>See All Services</Link>
+                </div>
             </div>
+
         </div>
     );
 };
