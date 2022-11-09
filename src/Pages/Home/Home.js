@@ -12,7 +12,7 @@ const Home = () => {
                     <figure className='w-1/2'><img src="https://i.postimg.cc/vZhZnchc/Catering-Service.png" alt="Movie" /></figure>
                     <div className="card-body w-1/2">
                         <h2 className="card-title text-center font-bold text-4xl">New servcie is released!</h2>
-                        <p>Unlike others, Pagla Catering Service is devoted to delivering super delicious food and fabulous service to spice up your event. Whatever you’re planning - a gorgeous wedding, a high-end corporate event, new year party, or anything - we will create an amazing food experience suited to your taste.</p>
+                        <p className='text-justify'>Unlike others, Pagla Catering Service is devoted to delivering super delicious food and fabulous service to spice up your event. Whatever you’re planning - a gorgeous wedding, a high-end corporate event, new year party, or anything - we will create an amazing food experience suited to your taste.</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary">Call Us Now</button>
                         </div>

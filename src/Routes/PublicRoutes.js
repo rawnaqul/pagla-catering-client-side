@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Pages/Blog/Blog";
 import CheckOut from "../Pages/CheckOut/CheckOut";
+import Dashboard from "../Pages/DashBoard/Dashboard";
 import Home from "../Pages/Home/Home";
 import Main from "../Pages/Layouts/Main";
 import Login from "../Pages/Login/Login";
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
                 loader: async ({ params }) => {
                     return fetch(`https://assign-11-server.vercel.app/services/${params.id}`)
                 }
+            },
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>,
             },
             {
                 path: '/login',
