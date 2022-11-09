@@ -6,7 +6,7 @@ import ReviewProduct from './ReviewProduct';
 
 
 const ServiceDetails = () => {
-    const { name, description, _id } = useLoaderData();
+    const { name, description, _id, image, price } = useLoaderData();
 
     // modal-function
     const { user } = useContext(AuthContext);
@@ -64,32 +64,52 @@ const ServiceDetails = () => {
 
     return (
         <div>
-            <h2>{name}</h2>
-            <p>{description}</p>
             <div>
-                <Link className="card-actions" to={`/checkout/${_id}`}>
-                    <button className="btn btn-primary w-full">Details</button>
-                </Link>
+                <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
+                    <h2 className='text-5xl font-bold text-slate-500'>"{name}" Service Details</h2>
+                </div>
+                <div className="card w-4/5 glass mx-auto mt-5">
+                    <figure className='w-full pt-5 rounded'><img src={image} alt="car!" className='rounded' /></figure>
+                    <div className="card-body">
+                        <br />
+                        <h2 className='text-xl text-slate-400'>Service Name: <span className='text-3xl text-orange-600 font-bold'>{name}</span></h2>
+                        <br />
+                        <p className='w-3/5 mx-auto text-xl text-justify text-slate-400'>Service Details: <span className='text-black'>{description}</span></p>
+                        <p className='text-slate-400'>Price: $<span className='text-red-400 text-2xl'>{price}</span> (per)</p>
+                        <br />
+                        <div className='w-1/2 mx-auto'>
+                            <Link className="card-actions" to={`/checkout/${_id}`}>
+                                <button className="btn btn-primary w-full">Check Out</button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             {/* Review start */}
             <div>
-                <div>
-                    <h2>
-                        {
-                            reviews.map(review => <ReviewProduct
-                                key={review._id}
-                                review={review}
-                            // handleDelete={handleDelete}
-                            // handleStatusUpdate={handleStatusUpdate}
-                            ></ReviewProduct>)
-                        }
-                    </h2>
+                <div className='mt-10'>
+                    <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
+                        <h2 className='text-5xl font-bold text-slate-500'> Reviews Of "{name}" Service</h2>
+                    </div>
+                </div>
+                <br />
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md container mx-auto m-5 p-10'>
+
+                    {
+                        reviews.map(review => <ReviewProduct
+                            key={review._id}
+                            review={review}
+                        // handleDelete={handleDelete}
+                        // handleStatusUpdate={handleStatusUpdate}
+                        ></ReviewProduct>)
+                    }
+
                 </div>
 
-                <div>
+                <div className='mt-5'>
                     {/* The button to open modal */}
-                    <label htmlFor="my-modal-3" className="btn">Post Your Review</label>
+                    <label htmlFor="my-modal-3" className="btn btn-info my-5">Post Your Review</label>
 
                     {/* Put this part before </body> tag */}
                     <input type="checkbox" id="my-modal-3" className="modal-toggle" />
@@ -107,7 +127,14 @@ const ServiceDetails = () => {
                                         <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
                                     </div>
                                     <textarea name="reviewMessage" className="my-4 textarea textarea-bordered h-24 w-full" placeholder="Write your review" required></textarea>
-
+                                    <div className="rating block">
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                        <input type="radio" name="rating-1" className="mask mask-star" />
+                                    </div>
+                                    <br />
                                     <input className='btn' type="submit" value="Submit Review" />
                                 </form>
                             </div>

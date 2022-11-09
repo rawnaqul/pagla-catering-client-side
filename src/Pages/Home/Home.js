@@ -11,7 +11,8 @@ const Home = () => {
                 <div className="card card-side bg-base-100 shadow-xl">
                     <figure className='w-1/2'><img src="https://i.postimg.cc/vZhZnchc/Catering-Service.png" alt="Movie" /></figure>
                     <div className="card-body w-1/2">
-                        <h2 className="card-title text-center font-bold text-4xl">New servcie is released!</h2>
+                        <h2 className="card-title text-center font-bold text-5xl">New Catering Service in the City!</h2>
+                        <br />
                         <p className='text-justify'>Unlike others, Pagla Catering Service is devoted to delivering super delicious food and fabulous service to spice up your event. Whatever you’re planning - a gorgeous wedding, a high-end corporate event, new year party, or anything - we will create an amazing food experience suited to your taste.</p>
                         <div className="card-actions justify-end">
                             <button className="btn btn-primary">Call Us Now</button>
@@ -19,6 +20,11 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <br />
+            <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
+                <h2 className='text-5xl font-bold text-slate-500'>Our Regular Services</h2>
+            </div>
+            <br />
             <div className='bg-lime-600 bg-opacity-30 grid grid-cols-3 gap-5 px-10 container mx-auto rounded p-5'>
                 {
                     services.map(service => <Services
@@ -30,6 +36,10 @@ const Home = () => {
                 <div className='text-xl text-orange-600'>
                     <Link to={'/allservices'}>See All Services</Link>
                 </div>
+            </div>
+            <br />
+            <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
+                <h2 className='text-5xl font-bold text-slate-500'>Customize Your Own Services</h2>
             </div>
 
         </div>

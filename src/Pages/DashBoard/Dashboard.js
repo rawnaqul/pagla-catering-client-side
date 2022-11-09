@@ -13,7 +13,7 @@ const Dashboard = () => {
     }, [user?.email])
 
     const handleDelete = id => {
-        const proceed = window.confirm('Are you sure, you want to cancel this order');
+        const proceed = window.confirm('Are you sure, you want to cancel this order?');
         if (proceed) {
             fetch(`http://localhost:5000/purchase/${id}`, {
                 method: 'DELETE'
@@ -53,8 +53,9 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
-            <h2 className="text-5xl">You have {orders.length} Orders</h2>
+        <div className='container mx-auto'>
+            <h2 className="text-3xl">You have placed <span className='text-orange-400 text-5xl'>{orders.length}</span> Orders!</h2>
+            <br />
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
