@@ -54,6 +54,7 @@ const Header = () => {
                         <li><Link to={'/blog'}>Blog</Link></li>
                         <li><Link to={'/allservices'}>Services</Link></li>
                         <li><Link to={'/addservice'}>Custom Service</Link></li>
+                        <li><Link to={'/myreviews'} className={`${user ? "flex" : "hidden"}`}>My Reviews</Link></li>
                         <li tabIndex={0}>
                             <a>
                                 Login/Signup

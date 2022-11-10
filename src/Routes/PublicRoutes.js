@@ -9,6 +9,7 @@ import AddService from "../Pages/Services/AddService";
 import AllServices from "../Pages/Services/AllServices";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import Signup from "../Pages/Signup/Signup";
+import MyReviews from "../Pages/UserReviews/MyReviews";
 import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
                 loader: async () => {
                     return fetch('https://assign-11-server.vercel.app/servicesadd')
                 }
+            },
+            {
+                path: '/myreviews',
+                element: <MyReviews></MyReviews>
             },
             {
                 path: '*',
