@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import AddService from '../Services/AddService';
 import ServiceCard from '../Services/ServiceCard';
 import Services from '../Services/Services';
 
 const Home = () => {
     const services = useLoaderData();
+
+
+    const [revServ, setRevServ] = useState([]);
+
+
+    useEffect(() => {
+        fetch("http://localhost:5000/servicesadd")
+            .then(res => res.json())
+            .then(data => {
+                const revServData = data.slice(0).reverse().slice(0, 2);
+                setRevServ(revServData)
+            })
+    }, [])
+
+
+
     return (
         <div>
 
@@ -45,12 +62,17 @@ const Home = () => {
             <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md container mx-auto'>
                     {
-                        services.map(service => <ServiceCard
+
+                        revServ.map(service => <ServiceCard
                             key={service._id}
                             service={service}
                         ></ServiceCard>)
                     }
+                    <div>
+                        <AddService></AddService>
+                    </div>
                 </div>
+
             </div>
 
         </div>
