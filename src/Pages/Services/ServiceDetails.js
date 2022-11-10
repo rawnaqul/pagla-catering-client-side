@@ -52,7 +52,7 @@ const ServiceDetails = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('You have Purchased successfully')
+                    alert('Your Review saved successfully')
                     form.reset();
 
                 }
@@ -109,6 +109,7 @@ const ServiceDetails = () => {
                 </div>
 
                 <div className='mt-5'>
+
                     {/* The button to open modal */}
                     <label htmlFor="my-modal-3" className="btn btn-info my-5">Post Your Review</label>
 
@@ -122,10 +123,10 @@ const ServiceDetails = () => {
                                     <h2 className="text-2xl font-bold mb-3">Service Name: {name}</h2>
 
                                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                                        <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />
+                                        <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" required />
                                         <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
 
-                                        <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
+                                        <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly required />
                                     </div>
                                     <textarea name="reviewMessage" className="my-4 textarea textarea-bordered h-24 w-full" placeholder="Write your review" required></textarea>
                                     <div className="rating block">
@@ -136,7 +137,8 @@ const ServiceDetails = () => {
                                         <input type="radio" name="rating-1" className="mask mask-star" />
                                     </div>
                                     <br />
-                                    <input className='btn' type="submit" value="Submit Review" />
+                                    <p className={`${user ? "hidden" : "block"}`} >Please log in to post a review!</p>
+                                    <input className={`${user ? "btn" : "hidden"}`} type="submit" value="Submit Review" />
                                 </form>
                             </div>
                         </div>
