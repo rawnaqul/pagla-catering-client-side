@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Pages/Context/AuthProvider/AuthProvider';
+import TabTitle from '../Shared/TabTitle';
 
 const Signup = () => {
+    TabTitle('Sign Up')
     const [error, setError] = useState();
 
     const { createUser } = useContext(AuthContext);

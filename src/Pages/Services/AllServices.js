@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import TabTitle from '../Shared/TabTitle';
 import ServiceCard from './ServiceCard';
 
 const AllServices = () => {
+
+    TabTitle('All Services')
 
 
 

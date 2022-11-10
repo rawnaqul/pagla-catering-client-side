@@ -4,10 +4,14 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import AddService from '../Services/AddService';
 import ServiceCard from '../Services/ServiceCard';
 import Services from '../Services/Services';
+import TabTitle from '../Shared/TabTitle';
 
 const Home = () => {
     const services = useLoaderData();
     const { user } = useContext(AuthContext);
+
+
+    TabTitle('Pagla Catering')
 
 
     const [revServ, setRevServ] = useState([]);

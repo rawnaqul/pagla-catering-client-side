@@ -23,9 +23,10 @@ const Header = () => {
     return (
         <div className='container mx-auto mb-20'>
             <div className="navbar bg-base-100">
-                <div className="flex-1">
-                    <Link to={'/'}><img src={logo}></img></Link>
-                </div>
+                <Link className='w-full' to={'/'}><img src={logo} alt="logo"></img></Link>
+                {/* <div className="flex-1 w-full">
+                    <Link className='w-full' to={'/'}><img src={logo} alt="logo"></img></Link>
+                </div> */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,7 +54,7 @@ const Header = () => {
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/blog'}>Blog</Link></li>
                         <li><Link to={'/allservices'}>Services</Link></li>
-                        <li><Link to={'/addservice'}>Custom Service</Link></li>
+                        <li><Link to={'/addservice'} className={`${user ? "flex" : "hidden"}`}>Custom Service</Link></li>
                         <li><Link to={'/myreviews'} className={`${user ? "flex" : "hidden"}`}>My Reviews</Link></li>
                         <li tabIndex={0}>
                             <a>

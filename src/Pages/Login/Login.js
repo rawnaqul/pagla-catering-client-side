@@ -2,9 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Pages/Context/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword } from 'firebase/auth';
+import TabTitle from '../Shared/TabTitle';
 
 
 const Login = () => {
+    TabTitle('Log In')
     const [error, setError] = useState('');
     const navigate = useNavigate();
 

@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+import TabTitle from '../Shared/TabTitle';
 
 import UserReview from './UserReview';
 
 
 const MyReviews = () => {
+
+    TabTitle('My Review')
 
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([])
@@ -62,19 +65,24 @@ const MyReviews = () => {
     }
 
     return (
-        <div className='grid lg:grid-cols-4 sm:grid-cols-1 gap-4 container m-auto'>
+        <div>
+            <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
+                <h2 className='text-5xl font-bold text-slate-500'><span className='text-orange-500'>All</span> of your reviews are here!</h2>
+            </div>
+            <div className='grid lg:grid-cols-4 sm:grid-cols-1 gap-4 container m-auto'>
 
-            <div className='lg:col-span-4'>
-                <div className='grid lg:grid-cols-3 sm:grid-cols-3 gap-4 my-10'>
-                    {
-                        reviews.map(review => <UserReview
-                            key={review._id}
-                            review={review}
-                            handleReviewUpdate={handleReviewUpdate}
-                            handleDelete={handleDelete}
+                <div className='lg:col-span-4'>
+                    <div className='grid lg:grid-cols-3 sm:grid-cols-3 gap-4 my-10'>
+                        {
+                            reviews.map(review => <UserReview
+                                key={review._id}
+                                review={review}
+                                handleReviewUpdate={handleReviewUpdate}
+                                handleDelete={handleDelete}
 
-                        ></UserReview>)
-                    }
+                            ></UserReview>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>
