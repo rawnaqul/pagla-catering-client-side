@@ -53,6 +53,7 @@ const Header = () => {
                         <li><Link to={'/'}>Home</Link></li>
                         <li><Link to={'/blog'}>Blog</Link></li>
                         <li><Link to={'/allservices'}>Services</Link></li>
+                        <li><Link to={'/addservice'}>Custom Service</Link></li>
                         <li tabIndex={0}>
                             <a>
                                 Login/Signup

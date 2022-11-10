@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import ServiceCard from '../Services/ServiceCard';
 import Services from '../Services/Services';
 
 const Home = () => {
@@ -39,7 +40,17 @@ const Home = () => {
             </div>
             <br />
             <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
-                <h2 className='text-5xl font-bold text-slate-500'>Customize Your Own Services</h2>
+                <h2 className='text-5xl font-bold text-slate-500'><span className='text-orange-500'>Or</span> Customize Your Own Services</h2>
+            </div>
+            <div className='bg-lime-600 bg-opacity-30 px-10 container mx-auto rounded p-5'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md container mx-auto'>
+                    {
+                        services.map(service => <ServiceCard
+                            key={service._id}
+                            service={service}
+                        ></ServiceCard>)
+                    }
+                </div>
             </div>
 
         </div>

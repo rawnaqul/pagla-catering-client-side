@@ -5,6 +5,7 @@ import Dashboard from "../Pages/DashBoard/Dashboard";
 import Home from "../Pages/Home/Home";
 import Main from "../Pages/Layouts/Main";
 import Login from "../Pages/Login/Login";
+import AddService from "../Pages/Services/AddService";
 import AllServices from "../Pages/Services/AllServices";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import Signup from "../Pages/Signup/Signup";
@@ -57,7 +58,14 @@ export const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <Signup></Signup>
-            }
+            },
+            {
+                path: '/addservice',
+                element: <AddService></AddService>,
+                loader: async () => {
+                    return fetch('https://assign-11-server.vercel.app/servicesadd')
+                }
+            },
         ]
     }
 ])
