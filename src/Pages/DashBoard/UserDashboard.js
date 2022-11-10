@@ -5,7 +5,8 @@ import React, { useEffect, useState } from 'react';
 
 const UserDashboard = ({ order, handleDelete, handleStatusUpdate }) => {
 
-    const { _id, serviceName, phone, customer, price, service, status } = order;
+    const { _id, serviceName, phone, customer, price, service, status, image } = order;
+    console.log(order);
     const [orderService, setOrderService] = useState({})
 
     useEffect(() => {
