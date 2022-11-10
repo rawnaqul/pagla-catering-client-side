@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import AddService from '../Services/AddService';
 import ServiceCard from '../Services/ServiceCard';
 import Services from '../Services/Services';
 
 const Home = () => {
     const services = useLoaderData();
+    const { user } = useContext(AuthContext);
 
 
     const [revServ, setRevServ] = useState([]);
@@ -68,7 +70,7 @@ const Home = () => {
                             service={service}
                         ></ServiceCard>)
                     }
-                    <div>
+                    <div className={`${user ? "flex" : "hidden"}`}>
                         <AddService></AddService>
                     </div>
                 </div>
