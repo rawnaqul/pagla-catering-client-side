@@ -19,10 +19,10 @@ const ReviewProduct = ({ review }) => {
             <div className=''>
                 <div className="card w-96 bg-primary text-primary-content bg-opacity-30">
                     <div className="card-body text-center">
-                        <p className='text-center'>
+                        <div className='text-center'>
                             This review is about
                             <h2 className="card-title text-center">{serviceName}</h2>
-                        </p>
+                        </div>
                         <h2>Customer Name: {customer}</h2>
                         <h2>Review: {reviewMessage}</h2>
                         <div className="card-actions justify-end">

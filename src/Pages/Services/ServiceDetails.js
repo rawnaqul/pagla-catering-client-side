@@ -94,15 +94,16 @@ const ServiceDetails = () => {
                     </div>
                 </div>
                 <br />
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md container mx-auto m-5 p-10'>
+                <div className='grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md container mx-auto m-5 p-10'>
 
                     {
-                        reviews.map(review => <ReviewProduct
+                        reviews.length !== 0 ? reviews.map(review => <ReviewProduct
                             key={review._id}
                             review={review}
                         // handleDelete={handleDelete}
                         // handleStatusUpdate={handleStatusUpdate}
                         ></ReviewProduct>)
+                            : <p className='text-2xl text-orange-600 outline rounded p-10 text-center'>"Ooopsss.... No Reviews Found for this service!"</p>
                     }
 
                 </div>
