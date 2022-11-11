@@ -15,10 +15,11 @@ const Home = () => {
 
 
     const [revServ, setRevServ] = useState([]);
+    console.log(revServ);
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/servicesadd")
+        fetch("https://assign-11-server.vercel.app/servicesadd")
             .then(res => res.json())
             .then(data => {
                 const revServData = data.slice(0).reverse().slice(0, 2);

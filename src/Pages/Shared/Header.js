@@ -9,7 +9,7 @@ const Header = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchase?email=${user?.email}`)
+        fetch(`https://assign-11-server.vercel.app/purchase?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
